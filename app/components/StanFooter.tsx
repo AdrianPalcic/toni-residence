@@ -79,7 +79,7 @@ export default function StanFooter() {
                   href="tel:+385997530159"
                   className="font-sans text-sm text-cream/75 hover:text-gold-light transition-colors"
                 >
-                  +385 99 753 0159
+                  +385 99 7530 159
                 </a>
               </div>
               <div>
@@ -87,11 +87,19 @@ export default function StanFooter() {
                   E-mail
                 </p>
                 <a
-                  href="mailto:antonio@acmiskovic.hr"
+                  href="mailto:ac@acmiskovic.hr"
                   className="font-sans text-sm text-cream/75 hover:text-gold-light transition-colors"
                 >
-                  antonio@acmiskovic.hr
+                  ac@acmiskovic.hr
                 </a>
+              </div>
+              <div>
+                <p className="font-sans text-[10px] tracking-widest2 uppercase text-cream/35 mb-1">
+                  Adresa
+                </p>
+                <p className="font-sans text-sm text-cream/75">
+                  Savska ul. 29, 10361 Trstenik Nartski
+                </p>
               </div>
               <div>
                 <p className="font-sans text-[10px] tracking-widest2 uppercase text-cream/35 mb-1">

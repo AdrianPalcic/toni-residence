@@ -407,7 +407,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
                 </dt>
                 <dd className="mt-1">
                   <a href="tel:+385997530159" className="font-sans text-navy-950 hover:text-gold-dark transition-colors">
-                    +385 99 753 0159
+                    +385 99 7530 159
                   </a>
                 </dd>
               </div>
@@ -416,10 +416,16 @@ export default function StanPage({ params }: { params: { tip: string } }) {
                   E-mail
                 </dt>
                 <dd className="mt-1">
-                  <a href="mailto:antonio@acmiskovic.hr" className="font-sans text-navy-950 hover:text-gold-dark transition-colors">
-                    antonio@acmiskovic.hr
+                  <a href="mailto:ac@acmiskovic.hr" className="font-sans text-navy-950 hover:text-gold-dark transition-colors">
+                    ac@acmiskovic.hr
                   </a>
                 </dd>
+              </div>
+              <div>
+                <dt className="font-sans text-xs tracking-widest2 uppercase text-navy-800/45">
+                  Adresa
+                </dt>
+                <dd className="font-sans text-navy-950 mt-1">Savska ul. 29, 10361 Trstenik Nartski</dd>
               </div>
               <div>
                 <dt className="font-sans text-xs tracking-widest2 uppercase text-navy-800/45">

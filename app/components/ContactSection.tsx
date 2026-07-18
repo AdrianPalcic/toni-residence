@@ -41,25 +41,25 @@ export default function ContactSection() {
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Telefon</dt>
               <dd className="mt-1">
                 <a href="tel:+385997530159" className="font-sans text-cream/85 hover:text-gold-light transition-colors">
-                  +385 99 753 0159
+                  +385 99 7530 159
                 </a>
               </dd>
             </div>
             <div>
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">E-mail</dt>
               <dd className="mt-1">
-                <a href="mailto:antonio@acmiskovic.hr" className="font-sans text-cream/85 hover:text-gold-light transition-colors">
-                  antonio@acmiskovic.hr
+                <a href="mailto:ac@acmiskovic.hr" className="font-sans text-cream/85 hover:text-gold-light transition-colors">
+                  ac@acmiskovic.hr
                 </a>
               </dd>
             </div>
             <div>
-              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Investitor</dt>
-              <dd className="font-sans text-cream/85 mt-1">AC Mišković d.o.o.</dd>
+              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Adresa</dt>
+              <dd className="font-sans text-cream/85 mt-1">Savska ul. 29, 10361 Trstenik Nartski</dd>
             </div>
             <div>
-              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Iskustvo</dt>
-              <dd className="font-sans text-cream/85 mt-1">35+ godina u građevini</dd>
+              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Investitor</dt>
+              <dd className="font-sans text-cream/85 mt-1">AC Mišković d.o.o.</dd>
             </div>
           </dl>
 
