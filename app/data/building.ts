@@ -9,6 +9,8 @@ export interface ApartmentType {
   description: string;
   floorplans: string[];
   highlights: string[];
+  heroImage: string;
+  galleryImages: string[];
 }
 
 export interface FloorUnit {
@@ -27,6 +29,24 @@ export interface Floor {
   extra?: string;
 }
 
+export const buildingFeatures: string[] = [
+  "Armirano betonska konstrukcija",
+  "Stolarija s troslojnim Low-E punjenim staklom sa 7 komora",
+  "Električne rolete",
+  "Lift Schindler (namijenjen i za nepokretne osobe)",
+  "Iznadprosječno jak priključak struje za svaki stan",
+  "Priprema za elektro punjače na parkingu",
+  "Podno grijanje – svaka soba u stanu ima vlastiti termostat za regulaciju topline",
+  "Urmet portafon za svaki stan",
+  "Pristup za invalide",
+  "Mineralni i akustični materijali u završnim radovima",
+  "Prvoklasna keramika i sanitarije",
+  "Sobna vrata po mjeri sa skrivenim pantima",
+  "Vaillant dizalice topline",
+  "Sika i PCI hidroizolacije krova, terasa i kupaonica",
+  "STO-etics fasadni sustav s dvoslojnom samoperivom fasadnom bojom na bazi Lotusa",
+];
+
 export const apartmentTypes: ApartmentType[] = [
   {
     id: "A",
@@ -37,7 +57,9 @@ export const apartmentTypes: ApartmentType[] = [
     description:
       "Prostrani trosobni stan s dvije spavaće sobe, izdvojenim dnevnim boravkom s blagovaonicom i velikom terasom okrenutom prema jugu.",
     floorplans: ["/images/tlocrt-3.jpeg"],
-    highlights: ["2 spavaće sobe", "Velika terasa", "Odvojena kuhinja"],
+    highlights: ["2 spavaće sobe", "Velika terasa prema jugu", "Odvojena kuhinja", "Prostrani dnevni boravak"],
+    heroImage: "/images/vanjski-2.jpeg",
+    galleryImages: ["/images/vanjski-1.jpeg", "/images/vanjski-3.jpeg", "/images/stubiste-i-hodnik-1.jpeg"],
   },
   {
     id: "B",
@@ -48,7 +70,9 @@ export const apartmentTypes: ApartmentType[] = [
     description:
       "Zrcalna verzija Tipa A na suprotnoj strani zgrade — dvije spavaće sobe, garderoba i prostran dnevni boravak s pristupom balkonu.",
     floorplans: ["/images/tlocrt-4.jpeg"],
-    highlights: ["Garderoba", "Balkon", "Puno prirodnog svjetla"],
+    highlights: ["Garderoba", "Balkon", "Puno prirodnog svjetla", "2 spavaće sobe"],
+    heroImage: "/images/vanjski-4.jpeg",
+    galleryImages: ["/images/vanjski-3.jpeg", "/images/vanjski-5.jpeg", "/images/stubiste-i-hodnik-2.jpeg"],
   },
   {
     id: "C",
@@ -59,7 +83,9 @@ export const apartmentTypes: ApartmentType[] = [
     description:
       "Funkcionalan dvosobni stan s odvojenom spavaćom sobom, radnim kutom i dnevnim boravkom otvorenim prema kuhinji.",
     floorplans: ["/images/tlocrt-5.jpeg"],
-    highlights: ["Radni kutak", "Otvoreni dnevni boravak", "Balkon"],
+    highlights: ["Radni kutak", "Otvoreni dnevni boravak", "Balkon", "Funkcionalan raspored"],
+    heroImage: "/images/vanjski-5.jpeg",
+    galleryImages: ["/images/vanjski-6.jpeg", "/images/vanjski-7.jpeg", "/images/stubiste-i-hodnik-3.jpeg"],
   },
   {
     id: "D",
@@ -70,7 +96,9 @@ export const apartmentTypes: ApartmentType[] = [
     description:
       "Kompaktan i praktičan jednosobni stan, idealan za investiciju ili mlade parove — spavaća soba, dnevni boravak i vlastita terasa.",
     floorplans: ["/images/tlocrt-6.jpeg"],
-    highlights: ["Kompaktan raspored", "Vlastita terasa", "Idealno za najam"],
+    highlights: ["Kompaktan raspored", "Vlastita terasa", "Idealno za najam", "Niža cijena ulaza"],
+    heroImage: "/images/vanjski-7.jpeg",
+    galleryImages: ["/images/vanjski-8.jpeg", "/images/vanjski-9.jpeg", "/images/stubiste-i-hodnik-4.jpeg"],
   },
   {
     id: "E",
@@ -81,7 +109,9 @@ export const apartmentTypes: ApartmentType[] = [
     description:
       "Najveći tip stana na katu — tri sobe, prostrani dnevni boravak s blagovaonicom i dvostruko orijentiran pogled.",
     floorplans: ["/images/tlocrt-7.jpeg", "/images/tlocrt-8.jpeg"],
-    highlights: ["3 sobe", "Dvostruka orijentacija", "Najveća kvadratura"],
+    highlights: ["3 sobe", "Dvostruka orijentacija", "Najveća kvadratura", "Prostrana blagovaonica"],
+    heroImage: "/images/vanjski-9.jpeg",
+    galleryImages: ["/images/vanjski-1.jpeg", "/images/vanjski-8.jpeg", "/images/stubiste-i-hodnik-5.jpeg"],
   },
 ];
 

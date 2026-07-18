@@ -1,19 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-
-const fraunces = Fraunces({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-fraunces",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-});
-
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
   title: "Toni Residence | Novogradnja",
@@ -28,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="hr">
-      <body className={`${fraunces.variable} ${inter.variable} font-sans`}>
+      <body className="font-sans">
         {children}
       </body>
     </html>

@@ -30,8 +30,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "serif"],
-        sans: ["var(--font-inter)", "sans-serif"],
+        serif: ["Georgia", '"Times New Roman"', "Times", "serif"],
+        sans: ["Verdana", "Geneva", "Tahoma", "sans-serif"],
       },
       letterSpacing: {
         widest2: "0.25em",

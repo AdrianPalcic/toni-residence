@@ -16,7 +16,7 @@ export default function ContactSection() {
       <div className="container-px max-w-8xl mx-auto grid lg:grid-cols-2 gap-16">
         <Reveal>
           <p className="section-heading-eyebrow text-gold-light">Lokacija</p>
-          <h2 className="section-heading text-cream">
+          <h2 className="section-heading !text-gold-light">
             Mirno susjedstvo, <span className="italic text-gold-light">odlična povezanost</span>
           </h2>
           <p className="font-sans text-cream/70 leading-relaxed mt-5 max-w-lg">

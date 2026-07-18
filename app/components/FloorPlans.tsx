@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { floors, apartmentTypes } from "@/app/data/building";
 import type { UnitStatus } from "@/app/data/building";
@@ -69,6 +70,11 @@ export default function FloorPlans() {
             <p className="font-sans text-sm text-navy-800/70 leading-relaxed mt-5">
               {floor.description}
             </p>
+            <p className="font-sans text-xs text-navy-800/45 leading-relaxed mt-4 italic">
+              * Materijali i oprema prikazani na tlocrtima su prijedlog završne
+              izvedbe. Moguće je dogovoriti individualna rješenja i izbor
+              materijala prema željama kupca.
+            </p>
           </Reveal>
 
           <Reveal delay={120}>
@@ -100,12 +106,12 @@ export default function FloorPlans() {
                       >
                         {statusLabel[unit.status]}
                       </span>
-                      <button
-                        onClick={() => setZoom(type.floorplans[0])}
-                        className="font-sans text-xs text-gold-dark border-b border-gold-dark/60 hover:border-gold-dark pb-0.5 whitespace-nowrap"
+                      <Link
+                        href={`/stanovi/${type.id.toLowerCase()}`}
+                        className="font-sans text-xs text-gold-dark border-b border-gold-dark/60 hover:border-gold-dark pb-0.5 whitespace-nowrap transition-colors"
                       >
-                        Tlocrt
-                      </button>
+                        Detalji →
+                      </Link>
                     </div>
                   </div>
                 );

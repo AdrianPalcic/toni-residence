@@ -19,7 +19,7 @@ export default function Gallery() {
         <Reveal className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-8">
           <div>
             <p className="section-heading-eyebrow text-gold-light">Galerija</p>
-            <h2 className="section-heading text-cream">
+            <h2 className="section-heading !text-cream">
               Pogled na <span className="italic text-gold-light">zgradu i zajedničke prostore</span>
             </h2>
           </div>

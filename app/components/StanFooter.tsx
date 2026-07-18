@@ -1,16 +1,16 @@
 import Image from "next/image";
 
 const navLinks = [
-  { href: "#o-projektu", label: "O projektu" },
-  { href: "#galerija", label: "Galerija" },
-  { href: "#virtualna-setnja", label: "360° šetnja" },
-  { href: "#stanovi", label: "Tipovi stanova" },
-  { href: "#tlocrti", label: "Tlocrti" },
-  { href: "#lokacija", label: "Lokacija" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-projektu", label: "O projektu" },
+  { href: "/#galerija", label: "Galerija" },
+  { href: "/#virtualna-setnja", label: "360° šetnja" },
+  { href: "/#stanovi", label: "Tipovi stanova" },
+  { href: "/#tlocrti", label: "Tlocrti" },
+  { href: "/#lokacija", label: "Lokacija" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
-export default function Footer() {
+export default function StanFooter() {
   return (
     <footer className="bg-navy-950">
       <div className="h-px bg-gold-gradient opacity-40" />
@@ -30,9 +30,9 @@ export default function Footer() {
                   className="h-9 w-auto"
                 />
               </span>
-              <span className="font-serif text-2xl text-cream">
+              <a href="/" className="font-serif text-2xl text-cream hover:text-gold-light transition-colors">
                 Toni <span className="italic text-gold-light">Residence</span>
-              </span>
+              </a>
             </div>
             <p className="font-sans text-sm text-cream/50 leading-relaxed">
               Novogradnja s pet tipova stanova — armirano betonska konstrukcija,
