@@ -76,10 +76,10 @@ export default function StanFooter() {
                   Telefon
                 </p>
                 <a
-                  href="tel:+385XXXXXXXXX"
+                  href="tel:+385997530159"
                   className="font-sans text-sm text-cream/75 hover:text-gold-light transition-colors"
                 >
-                  +385 XX XXX XXXX
+                  +385 99 753 0159
                 </a>
               </div>
               <div>
@@ -87,10 +87,10 @@ export default function StanFooter() {
                   E-mail
                 </p>
                 <a
-                  href="mailto:info@toniresidence.hr"
+                  href="mailto:antonio@acmiskovic.hr"
                   className="font-sans text-sm text-cream/75 hover:text-gold-light transition-colors"
                 >
-                  info@toniresidence.hr
+                  antonio@acmiskovic.hr
                 </a>
               </div>
               <div>

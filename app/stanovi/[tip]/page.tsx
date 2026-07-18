@@ -405,14 +405,20 @@ export default function StanPage({ params }: { params: { tip: string } }) {
                 <dt className="font-sans text-xs tracking-widest2 uppercase text-navy-800/45">
                   Telefon
                 </dt>
-                <dd className="font-sans text-navy-950 mt-1">+385 XX XXX XXXX</dd>
+                <dd className="mt-1">
+                  <a href="tel:+385997530159" className="font-sans text-navy-950 hover:text-gold-dark transition-colors">
+                    +385 99 753 0159
+                  </a>
+                </dd>
               </div>
               <div>
                 <dt className="font-sans text-xs tracking-widest2 uppercase text-navy-800/45">
                   E-mail
                 </dt>
-                <dd className="font-sans text-navy-950 mt-1">
-                  info@toniresidence.hr
+                <dd className="mt-1">
+                  <a href="mailto:antonio@acmiskovic.hr" className="font-sans text-navy-950 hover:text-gold-dark transition-colors">
+                    antonio@acmiskovic.hr
+                  </a>
                 </dd>
               </div>
               <div>

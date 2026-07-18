@@ -38,22 +38,37 @@ export default function ContactSection() {
 
           <dl className="grid grid-cols-2 gap-6 mt-8">
             <div>
-              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Adresa</dt>
-              <dd className="font-sans text-cream/85 mt-1">Ulica i broj, Grad</dd>
-            </div>
-            <div>
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Telefon</dt>
-              <dd className="font-sans text-cream/85 mt-1">+385 XX XXX XXXX</dd>
+              <dd className="mt-1">
+                <a href="tel:+385997530159" className="font-sans text-cream/85 hover:text-gold-light transition-colors">
+                  +385 99 753 0159
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">E-mail</dt>
-              <dd className="font-sans text-cream/85 mt-1">info@toniresidence.hr</dd>
+              <dd className="mt-1">
+                <a href="mailto:antonio@acmiskovic.hr" className="font-sans text-cream/85 hover:text-gold-light transition-colors">
+                  antonio@acmiskovic.hr
+                </a>
+              </dd>
             </div>
             <div>
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Investitor</dt>
               <dd className="font-sans text-cream/85 mt-1">AC Mišković d.o.o.</dd>
             </div>
+            <div>
+              <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Iskustvo</dt>
+              <dd className="font-sans text-cream/85 mt-1">35+ godina u građevini</dd>
+            </div>
           </dl>
+
+          <div className="mt-8 p-5 border border-cream/10 bg-cream/5">
+            <p className="font-sans text-xs tracking-widest2 uppercase text-cream/40 mb-2">O investitoru</p>
+            <p className="font-sans text-sm text-cream/65 leading-relaxed">
+              Obiteljsko građevinsko poduzeće s korijenima koji sežu u 1991. godinu. Tim certificiranih stručnjaka predvode Cvjetko i Antonio Mišković (dipl. ing. građevine) — 20+ certifikata, stotine izvedenih projekata u Hrvatskoj i Europi.
+            </p>
+          </div>
         </Reveal>
 
         <Reveal delay={120} className="scroll-mt-20" id="kontakt">
