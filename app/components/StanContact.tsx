@@ -60,7 +60,7 @@ export default function StanContact({ aptType }: { aptType: string }) {
         </label>
         <input
           type="text"
-          defaultValue={`${aptType} – Toni Residence`}
+          defaultValue={`${aptType} – Svibje Residence`}
           readOnly
           className="w-full mt-2 bg-transparent border-b border-navy-950/15 py-2 font-sans text-navy-800/60 focus:outline-none cursor-default"
         />

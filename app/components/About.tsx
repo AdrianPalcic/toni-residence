@@ -30,7 +30,7 @@ export default function About() {
             Život osmišljen do <span className="italic text-gold-dark">posljednjeg detalja</span>
           </h2>
           <p className="font-sans text-navy-800/80 leading-relaxed mt-6 max-w-xl">
-            Toni Residence je novoizgrađena rezidencijalna zgrada koja spaja
+            Svibje Residence je novoizgrađena rezidencijalna zgrada koja spaja
             modernu arhitekturu, kvalitetnu gradnju i mirnu lokaciju. Svaki
             stan pažljivo je projektiran kako bi pružio maksimalnu
             funkcionalnost prostora, prirodno svjetlo i osjećaj privatnosti.
@@ -69,7 +69,7 @@ export default function About() {
             <div className="relative aspect-[3/4] rounded-sm overflow-hidden translate-y-8">
               <Image
                 src="/images/vanjski-2.jpeg"
-                alt="Vanjski izgled zgrade Toni Residence"
+                alt="Vanjski izgled zgrade Svibje Residence"
                 fill
                 sizes="(min-width: 1024px) 25vw, 45vw"
                 className="object-cover"
@@ -78,7 +78,7 @@ export default function About() {
             <div className="relative aspect-[3/4] rounded-sm overflow-hidden">
               <Image
                 src="/images/stubiste-i-hodnik-2.jpeg"
-                alt="Uređeno stubište Toni Residence"
+                alt="Uređeno stubište Svibje Residence"
                 fill
                 sizes="(min-width: 1024px) 25vw, 45vw"
                 className="object-cover"

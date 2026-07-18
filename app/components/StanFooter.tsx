@@ -31,7 +31,7 @@ export default function StanFooter() {
                 />
               </span>
               <a href="/" className="font-serif text-2xl text-cream hover:text-gold-light transition-colors">
-                Toni <span className="italic text-gold-light">Residence</span>
+                Svibje <span className="italic text-gold-light">Residence</span>
               </a>
             </div>
             <p className="font-sans text-sm text-cream/50 leading-relaxed">
@@ -120,7 +120,7 @@ export default function StanFooter() {
       <div className="border-t border-cream/10">
         <div className="container-px max-w-8xl mx-auto py-5 flex flex-col sm:flex-row justify-between gap-2 items-center">
           <p className="font-sans text-xs text-cream/35">
-            © {new Date().getFullYear()} Toni Residence · AC Mišković d.o.o. Sva prava pridržana.
+            © {new Date().getFullYear()} Svibje Residence · AC Mišković d.o.o. Sva prava pridržana.
           </p>
           <p className="font-sans text-xs text-cream/25">
             Novogradnja · Prizemlje + 3 kata · 17 stanova

@@ -21,7 +21,7 @@ export async function generateMetadata({
   const apt = apartmentTypes.find((t) => t.id === params.tip.toUpperCase());
   if (!apt) return {};
   return {
-    title: `${apt.name} – ${apt.rooms} ${apt.areaApprox} | Toni Residence`,
+    title: `${apt.name} – ${apt.rooms} ${apt.areaApprox} | Svibje Residence`,
     description: apt.description,
   };
 }
@@ -71,7 +71,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
       <section className="relative h-[85vh] min-h-[560px] flex items-end">
         <Image
           src={apt.heroImage}
-          alt={`Toni Residence – ${apt.name}`}
+          alt={`Svibje Residence – ${apt.name}`}
           fill
           priority
           sizes="100vw"
@@ -85,7 +85,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
               {apt.id}
             </span>
             <span className="font-sans text-xs tracking-widest2 uppercase text-gold-light">
-              Toni Residence · Tip stana
+              Svibje Residence · Tip stana
             </span>
           </div>
 
@@ -215,13 +215,82 @@ export default function StanPage({ params }: { params: { tip: string } }) {
             >
               <Image
                 src={src}
-                alt={`Toni Residence – fotografija ${i + 1}`}
+                alt={`Svibje Residence – fotografija ${i + 1}`}
                 fill
                 sizes="(min-width: 1024px) 30vw, 33vw"
                 className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Specifikacije ── */}
+      <section className="bg-cream py-24 lg:py-32">
+        <div className="container-px max-w-8xl mx-auto">
+          <Reveal className="max-w-2xl mb-12">
+            <p className="section-heading-eyebrow">Specifikacije</p>
+            <h2 className="section-heading">
+              Tehnički list <span className="italic text-gold-dark">{apt.name}</span>
+            </h2>
+            <p className="font-sans text-navy-800/70 leading-relaxed mt-4">
+              Točne neto kvadrature svih prostorija bez koeficijenata.
+            </p>
+          </Reveal>
+
+          <Reveal className="max-w-lg">
+            <div className="border border-navy-950/10 overflow-hidden">
+              <div className="bg-navy-950 px-6 py-4">
+                <p className="font-sans text-xs tracking-widest2 uppercase text-gold-light">
+                  {apt.name} — površine prostorija (neto)
+                </p>
+              </div>
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-navy-950/10 bg-stone-50">
+                    <th className="text-left font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-6 py-3">
+                      Prostorija
+                    </th>
+                    <th className="text-right font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-6 py-3">
+                      Površina
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {apt.roomSpecs.map((spec, i) => (
+                    <tr
+                      key={i}
+                      className={`border-b border-navy-950/8 ${spec.isOutdoor ? "bg-gold-light/10" : "bg-white"}`}
+                    >
+                      <td className="font-sans text-sm text-navy-800/85 px-6 py-3.5">
+                        {spec.isOutdoor && (
+                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold-dark mr-2 mb-0.5 align-middle" />
+                        )}
+                        {spec.room}
+                      </td>
+                      <td className="font-sans text-sm text-navy-950 font-medium text-right px-6 py-3.5">
+                        {spec.area}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr className="bg-navy-950">
+                    <td className="font-sans text-sm font-semibold text-cream px-6 py-4">
+                      Ukupno
+                    </td>
+                    <td className="font-sans text-sm font-semibold text-gold-light text-right px-6 py-4">
+                      {apt.areaTotal}
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
+              <p className="font-sans text-xs text-navy-800/40 italic px-6 py-3 bg-stone-50 border-t border-navy-950/8">
+                <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold-dark mr-1.5 mb-0.5 align-middle" />
+                Označeno = natkriveni vanjski prostor (terasa/balkon)
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -236,7 +305,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
               Iznadprosječna kvaliteta
             </h2>
             <p className="font-sans text-cream/65 leading-relaxed mt-5">
-              Svaki detalj Toni Residencea odražava predanost kvaliteti —
+              Svaki detalj Svibje Residencea odražava predanost kvaliteti —
               od konstrukcije do završnih radova, koristimo isključivo provjerene
               materijale i brendove renomiranih proizvođača.
             </p>
@@ -262,7 +331,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
             <div className="bg-gold-gradient p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-sm">
               <div>
                 <p className="font-sans text-xs tracking-widest2 uppercase text-navy-950/60">
-                  Toni Residence
+                  Svibje Residence
                 </p>
                 <p className="font-serif text-2xl sm:text-3xl text-navy-950 mt-2">
                   Useljivo odmah — stanovi čekaju vas

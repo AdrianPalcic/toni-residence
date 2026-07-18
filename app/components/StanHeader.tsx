@@ -36,7 +36,7 @@ export default function StanHeader() {
           </span>
           <span className="flex flex-col leading-none whitespace-nowrap">
             <span className="font-serif text-xl lg:text-2xl xl:text-3xl tracking-wide text-cream">
-              Toni <span className="text-gold-light italic">Residence</span>
+              Svibje <span className="text-gold-light italic">Residence</span>
             </span>
             <span className="hidden xl:block font-sans text-[10px] tracking-widest2 uppercase text-cream/50 mt-1">
               Novogradnja &mdash; Prizemlje + 3 kata

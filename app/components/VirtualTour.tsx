@@ -10,7 +10,7 @@ export default function VirtualTour() {
           <div className="relative aspect-[21/9] min-h-[360px]">
             <Image
               src="/images/stubiste-i-hodnik-3.jpeg"
-              alt="Virtualna šetnja kroz Toni Residence"
+              alt="Virtualna šetnja kroz Svibje Residence"
               fill
               sizes="100vw"
               className="object-cover"
@@ -22,7 +22,7 @@ export default function VirtualTour() {
             <div className="px-8 sm:px-14 lg:px-20 max-w-2xl">
               <p className="section-heading-eyebrow text-gold-light">360° Virtualna šetnja</p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mt-3 leading-tight">
-                Prošećite kroz <span className="italic text-gold-light">Toni Residence</span>{" "}
+                Prošećite kroz <span className="italic text-gold-light">Svibje Residence</span>{" "}
                 iz naslonjača
               </h2>
               <p className="font-sans text-cream/75 mt-5 max-w-lg leading-relaxed">

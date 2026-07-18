@@ -20,20 +20,22 @@ export default function ContactSection() {
             Mirno susjedstvo, <span className="italic text-gold-light">odlična povezanost</span>
           </h2>
           <p className="font-sans text-cream/70 leading-relaxed mt-5 max-w-lg">
-            Zgrada Toni Residence smještena je u mirnom stambenom naselju s
+            Zgrada Svibje Residence smještena je u mirnom stambenom naselju s
             dobrom prometnom povezanošću, blizinom trgovina, škola i javnog
             prijevoza.
           </p>
 
-          <div className="relative mt-8 aspect-[4/3] rounded-sm overflow-hidden border border-cream/10 bg-navy-900 flex items-center justify-center">
-            <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(to_right,theme(colors.cream)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.cream)_1px,transparent_1px)] [background-size:32px_32px]" />
-            <div className="relative flex flex-col items-center gap-3 text-center px-6">
-              <span className="w-3 h-3 rounded-full bg-gold-light shadow-[0_0_0_8px_rgba(203,169,93,0.2)]" />
-              <p className="font-sans text-sm text-cream/60 max-w-xs">
-                Točna adresa i interaktivna karta dodaju se naknadno &mdash;
-                mjesto za Google Maps prikaz lokacije zgrade.
-              </p>
-            </div>
+          <div className="relative mt-8 aspect-[4/3] rounded-sm overflow-hidden border border-cream/10">
+            <iframe
+              src="https://maps.google.com/maps?q=Savska+ul.+29,+10361+Trstenik+Nartski,+Croatia&hl=hr&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, position: "absolute", inset: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Svibje Residence – lokacija"
+            />
           </div>
 
           <dl className="grid grid-cols-2 gap-6 mt-8">

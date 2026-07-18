@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden bg-navy-950">
       <Image
         src="/images/vanjski-1.jpeg"
-        alt="Toni Residence — vanjski izgled zgrade"
+        alt="Svibje Residence — vanjski izgled zgrade"
         fill
         priority
         sizes="100vw"
@@ -24,11 +24,17 @@ export default function Hero() {
             className="fade-in-up font-serif text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] text-cream mt-4 max-w-3xl"
             style={{ animationDelay: "120ms" }}
           >
-            Toni <span className="italic text-gold-light">Residence</span>
+            Svibje <span className="italic text-gold-light">Residence</span>
           </h1>
           <p
-            className="fade-in-up font-sans text-cream/75 text-base sm:text-lg mt-6 max-w-xl leading-relaxed"
-            style={{ animationDelay: "240ms" }}
+            className="fade-in-up font-serif text-xl sm:text-2xl text-gold-light/90 italic mt-4"
+            style={{ animationDelay: "200ms" }}
+          >
+            Kvaliteta koju možete zvati dom
+          </p>
+          <p
+            className="fade-in-up font-sans text-cream/75 text-base sm:text-lg mt-5 max-w-xl leading-relaxed"
+            style={{ animationDelay: "320ms" }}
           >
             Suvremena rezidencijalna zgrada s pažljivo osmišljenim stanovima,
             plemenitim materijalima i mirnim susjedstvom — prizemlje i tri
