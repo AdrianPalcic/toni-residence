@@ -240,52 +240,54 @@ export default function StanPage({ params }: { params: { tip: string } }) {
 
           <Reveal className="max-w-lg">
             <div className="border border-navy-950/10 overflow-hidden">
-              <div className="bg-navy-950 px-6 py-4">
+              <div className="bg-navy-950 px-4 sm:px-6 py-4">
                 <p className="font-sans text-xs tracking-widest2 uppercase text-gold-light">
                   {apt.name} — površine prostorija (neto)
                 </p>
               </div>
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-navy-950/10 bg-stone-50">
-                    <th className="text-left font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-6 py-3">
-                      Prostorija
-                    </th>
-                    <th className="text-right font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-6 py-3">
-                      Površina
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {apt.roomSpecs.map((spec, i) => (
-                    <tr
-                      key={i}
-                      className={`border-b border-navy-950/8 ${spec.isOutdoor ? "bg-gold-light/10" : "bg-white"}`}
-                    >
-                      <td className="font-sans text-sm text-navy-800/85 px-6 py-3.5">
-                        {spec.isOutdoor && (
-                          <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold-dark mr-2 mb-0.5 align-middle" />
-                        )}
-                        {spec.room}
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[380px]">
+                  <thead>
+                    <tr className="border-b border-navy-950/10 bg-stone-50">
+                      <th className="text-left font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-4 sm:px-6 py-3">
+                        Prostorija
+                      </th>
+                      <th className="text-right font-sans text-xs tracking-widest2 uppercase text-navy-800/50 px-4 sm:px-6 py-3">
+                        Površina
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {apt.roomSpecs.map((spec, i) => (
+                      <tr
+                        key={i}
+                        className={`border-b border-navy-950/8 ${spec.isOutdoor ? "bg-gold-light/10" : "bg-white"}`}
+                      >
+                        <td className="font-sans text-sm text-navy-800/85 px-4 sm:px-6 py-3.5">
+                          {spec.isOutdoor && (
+                            <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold-dark mr-2 mb-0.5 align-middle" />
+                          )}
+                          {spec.room}
+                        </td>
+                        <td className="font-sans text-sm text-navy-950 font-medium text-right px-4 sm:px-6 py-3.5 whitespace-nowrap">
+                          {spec.area}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                  <tfoot>
+                    <tr className="bg-navy-950">
+                      <td className="font-sans text-sm font-semibold text-cream px-4 sm:px-6 py-4">
+                        Ukupno
                       </td>
-                      <td className="font-sans text-sm text-navy-950 font-medium text-right px-6 py-3.5">
-                        {spec.area}
+                      <td className="font-sans text-sm font-semibold text-gold-light text-right px-4 sm:px-6 py-4 whitespace-nowrap">
+                        {apt.areaTotal}
                       </td>
                     </tr>
-                  ))}
-                </tbody>
-                <tfoot>
-                  <tr className="bg-navy-950">
-                    <td className="font-sans text-sm font-semibold text-cream px-6 py-4">
-                      Ukupno
-                    </td>
-                    <td className="font-sans text-sm font-semibold text-gold-light text-right px-6 py-4">
-                      {apt.areaTotal}
-                    </td>
-                  </tr>
-                </tfoot>
-              </table>
-              <p className="font-sans text-xs text-navy-800/40 italic px-6 py-3 bg-stone-50 border-t border-navy-950/8">
+                  </tfoot>
+                </table>
+              </div>
+              <p className="font-sans text-xs text-navy-800/40 italic px-4 sm:px-6 py-3 bg-stone-50 border-t border-navy-950/8">
                 <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold-dark mr-1.5 mb-0.5 align-middle" />
                 Označeno = natkriveni vanjski prostor (terasa/balkon)
               </p>

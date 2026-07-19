@@ -38,7 +38,7 @@ export default function ContactSection() {
             />
           </div>
 
-          <dl className="grid grid-cols-2 gap-6 mt-8">
+          <dl className="grid grid-cols-1 min-[400px]:grid-cols-2 gap-6 mt-8">
             <div>
               <dt className="font-sans text-xs tracking-widest2 uppercase text-cream/45">Telefon</dt>
               <dd className="mt-1">

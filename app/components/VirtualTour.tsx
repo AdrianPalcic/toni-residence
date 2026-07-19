@@ -7,7 +7,7 @@ export default function VirtualTour() {
     <section id="virtualna-setnja" className="relative bg-cream py-24 lg:py-32">
       <div className="container-px max-w-8xl mx-auto">
         <div className="relative rounded-sm overflow-hidden">
-          <div className="relative aspect-[21/9] min-h-[360px]">
+          <div className="relative aspect-[3/4] min-h-[520px] sm:aspect-[16/10] sm:min-h-[420px] lg:aspect-[21/9] lg:min-h-[360px]">
             <Image
               src="/images/stubiste-i-hodnik-3.jpeg"
               alt="Virtualna šetnja kroz Svibje Residence"
@@ -19,13 +19,13 @@ export default function VirtualTour() {
           </div>
 
           <div className="absolute inset-0 flex flex-col justify-center">
-            <div className="px-8 sm:px-14 lg:px-20 max-w-2xl">
+            <div className="px-6 sm:px-14 lg:px-20 max-w-2xl">
               <p className="section-heading-eyebrow text-gold-light">360° Virtualna šetnja</p>
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-cream mt-3 leading-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-cream mt-3 leading-tight">
                 Prošećite kroz <span className="italic text-gold-light">Svibje Residence</span>{" "}
                 iz naslonjača
               </h2>
-              <p className="font-sans text-cream/75 mt-5 max-w-lg leading-relaxed">
+              <p className="font-sans text-sm sm:text-base text-cream/75 mt-4 sm:mt-5 max-w-lg leading-relaxed">
                 Istražite hodnike, stubište i okoliš zgrade u interaktivnoj
                 360° virtualnoj šetnji — bez potrebe za fizičkim posjetom.
               </p>
@@ -33,7 +33,7 @@ export default function VirtualTour() {
                 href={TOUR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary mt-8 w-fit"
+                className="btn-primary mt-6 sm:mt-8 w-fit"
               >
                 Pokrenite virtualnu šetnju
                 <svg

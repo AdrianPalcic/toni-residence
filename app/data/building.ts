@@ -197,10 +197,10 @@ export const floors: Floor[] = [
     description: "Prvi kat donosi svih pet tipova stanova u zrcaljenom rasporedu oko središnjeg stubišta.",
     planImage: "/images/tipovi-stanova.jpeg",
     units: [
-      { typeId: "A", status: "available" },
+      { typeId: "A", status: "sold" },
       { typeId: "B", status: "available" },
       { typeId: "C", status: "available" },
-      { typeId: "D", status: "available" },
+      { typeId: "D", status: "sold" },
       { typeId: "E", status: "available" },
     ],
   },
@@ -212,10 +212,10 @@ export const floors: Floor[] = [
     description: "Drugi kat ponavlja identičan raspored stanova kao i prvi kat.",
     planImage: "/images/tipovi-stanova.jpeg",
     units: [
-      { typeId: "A", status: "available" },
+      { typeId: "A", status: "sold" },
       { typeId: "B", status: "available" },
       { typeId: "C", status: "available" },
-      { typeId: "D", status: "available" },
+      { typeId: "D", status: "sold" },
       { typeId: "E", status: "available" },
     ],
   },
@@ -236,13 +236,20 @@ export const floors: Floor[] = [
   },
 ];
 
-export const buildingFacts = [
-  { label: "Etaže", value: "Prizemlje + 3 kata" },
-  { label: "Stanova ukupno", value: "17" },
-  { label: "Spremišta", value: "17" },
-  { label: "Tipova stanova", value: "5 (A–E)" },
-  { label: "Dostupnost", value: "Useljivo odmah" },
-];
+export function getAvailableCount(): number {
+  return floors.flatMap((f) => f.units).filter((u) => u.status === "available").length;
+}
+
+export function getBuildingFacts() {
+  const available = getAvailableCount();
+  return [
+    { label: "Etaže", value: "Prizemlje + 3 kata" },
+    { label: "Slobodnih stanova", value: `${available} / 17` },
+    { label: "Spremišta", value: "17" },
+    { label: "Tipova stanova", value: "5 (A–E)" },
+    { label: "Dostupnost", value: "Useljivo odmah" },
+  ];
+}
 
 export const exteriorImages = [
   "/images/vanjski-1.jpeg",

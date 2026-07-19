@@ -75,7 +75,7 @@ export default function ApartmentTypes() {
                     </div>
 
                     {/* Info */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+                    <div className="absolute bottom-0 left-0 right-0 pt-4 px-4 sm:pt-5 sm:px-5">
                       <p className="font-serif text-lg sm:text-xl text-cream leading-snug">
                         {apt.name}
                       </p>

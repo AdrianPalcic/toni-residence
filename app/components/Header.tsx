@@ -33,19 +33,19 @@ export default function Header() {
       }`}
     >
       <div className="container-px max-w-8xl mx-auto flex items-center justify-between h-20 lg:h-24">
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-3 group min-w-0">
           <span className="shrink-0 bg-cream rounded-sm p-1.5 shadow-sm">
             <Image
               src="/images/ac-miskovic-logo.svg"
               alt="AC Mišković d.o.o."
               width={648}
               height={547}
-              className="h-9 w-auto lg:h-11"
+              className="h-8 w-auto sm:h-9 lg:h-11"
               priority
             />
           </span>
-          <span className="flex flex-col leading-none whitespace-nowrap">
-            <span className="font-serif text-xl lg:text-2xl xl:text-3xl tracking-wide text-cream">
+          <span className="flex flex-col leading-none min-w-0">
+            <span className="font-serif text-base sm:text-xl lg:text-2xl xl:text-3xl tracking-wide text-cream truncate">
               Svibje <span className="text-gold-light italic">Residence</span>
             </span>
             <span className="hidden xl:block font-sans text-[10px] tracking-widest2 uppercase text-cream/50 mt-1">
@@ -66,14 +66,14 @@ export default function Header() {
           ))}
         </nav>
 
-        <a href="#kontakt" className="hidden xl:inline-flex btn-primary !py-3 !px-6 text-xs whitespace-nowrap">
+        <a href="#kontakt" className="hidden min-[600px]:inline-flex btn-primary !py-3 !px-6 text-xs whitespace-nowrap">
           Zakažite razgled
         </a>
 
         <button
           aria-label="Izbornik"
           onClick={() => setOpen((v) => !v)}
-          className="xl:hidden relative w-9 h-9 flex flex-col justify-center items-center gap-[6px]"
+          className="xl:hidden relative w-9 h-9 shrink-0 flex flex-col justify-center items-center gap-[6px]"
         >
           <span
             className={`block h-[1.5px] w-7 bg-cream transition-transform duration-300 ${
@@ -95,7 +95,7 @@ export default function Header() {
 
       <div
         className={`xl:hidden overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-          open ? "max-h-[420px]" : "max-h-0"
+          open ? "max-h-[640px]" : "max-h-0"
         }`}
       >
         <nav className="flex flex-col gap-1 px-6 pb-8 pt-2">

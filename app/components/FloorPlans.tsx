@@ -51,7 +51,7 @@ export default function FloorPlans() {
         </Reveal>
 
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-14 mt-12 items-start">
-          <Reveal>
+          <Reveal className="order-2 lg:order-1">
             <button
               onClick={() => setZoom(floor.planImage)}
               className="relative block w-full aspect-[16/11] rounded-sm overflow-hidden bg-white shadow-xl group"
@@ -77,7 +77,7 @@ export default function FloorPlans() {
             </p>
           </Reveal>
 
-          <Reveal delay={120}>
+          <Reveal delay={120} className="order-1 lg:order-2">
             <h3 className="font-serif text-2xl text-navy-950 mb-5">
               Stanovi &mdash; {floor.name}
             </h3>
