@@ -7,7 +7,7 @@ export default defineConfig({
   basePath: "/studio",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? "",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
-  title: "Toni Residence",
+  title: "Svibje Residence",
   plugins: [structureTool(), visionTool()],
   schema: {
     types: schemas,
