@@ -1,16 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const links = [
-  { href: "#o-projektu", label: "O projektu" },
-  { href: "#galerija", label: "Galerija" },
-  { href: "#virtualna-setnja", label: "360° šetnja" },
-  { href: "#stanovi", label: "Tipovi stanova" },
-  { href: "#tlocrti", label: "Tlocrti" },
-  { href: "#lokacija", label: "Lokacija" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#o-projektu", label: "O projektu" },
+  { href: "/#galerija", label: "Galerija" },
+  { href: "/#virtualna-setnja", label: "360° šetnja" },
+  { href: "/#stanovi", label: "Tipovi stanova" },
+  { href: "/#tlocrti", label: "Tlocrti" },
+  { href: "/#lokacija", label: "Lokacija" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export default function Header() {
@@ -33,7 +34,7 @@ export default function Header() {
       }`}
     >
       <div className="container-px max-w-8xl mx-auto flex items-center justify-between h-20 lg:h-24">
-        <a href="#" className="flex items-center gap-3 group min-w-0">
+        <Link href="/" className="flex items-center gap-3 group min-w-0">
           <span className="shrink-0 bg-cream rounded-sm p-1.5 shadow-sm">
             <Image
               src="/images/ac-miskovic-logo.svg"
@@ -52,7 +53,7 @@ export default function Header() {
               Novogradnja &mdash; Prizemlje + 3 kata
             </span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden xl:flex items-center gap-6 2xl:gap-8">
           {links.map((l) => (
@@ -65,10 +66,6 @@ export default function Header() {
             </a>
           ))}
         </nav>
-
-        <a href="#kontakt" className="hidden min-[600px]:inline-flex btn-primary !py-3 !px-6 text-xs whitespace-nowrap">
-          Zakažite razgled
-        </a>
 
         <button
           aria-label="Izbornik"
@@ -109,9 +106,6 @@ export default function Header() {
               {l.label}
             </a>
           ))}
-          <a href="#kontakt" onClick={() => setOpen(false)} className="btn-primary mt-5 w-full">
-            Zakažite razgled
-          </a>
         </nav>
       </div>
     </header>

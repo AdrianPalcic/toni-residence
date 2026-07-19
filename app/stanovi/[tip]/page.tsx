@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { apartmentTypes, floors, buildingFeatures } from "@/app/data/building";
-import StanHeader from "@/app/components/StanHeader";
+import Header from "@/app/components/Header";
 import StanFooter from "@/app/components/StanFooter";
 import StanContact from "@/app/components/StanContact";
 import StanFloorPlan from "@/app/components/StanFloorPlan";
@@ -65,7 +65,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
 
   return (
     <main className="overflow-x-hidden">
-      <StanHeader />
+      <Header />
 
       {/* ── Hero ── */}
       <section className="relative h-[85vh] min-h-[560px] flex items-end">
