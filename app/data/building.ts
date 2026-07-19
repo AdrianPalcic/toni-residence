@@ -247,7 +247,7 @@ export function getBuildingFacts() {
     { label: "Slobodnih stanova", value: `${available} / 17` },
     { label: "Spremišta", value: "17" },
     { label: "Tipova stanova", value: "5 (A–E)" },
-    { label: "Dostupnost", value: "Useljivo odmah" },
+    { label: "Dostupnost", value: "U izgradnji" },
   ];
 }
 

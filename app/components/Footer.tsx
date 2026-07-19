@@ -37,12 +37,12 @@ export default function Footer() {
             <p className="font-sans text-sm text-cream/50 leading-relaxed">
               Novogradnja s pet tipova stanova — armirano betonska konstrukcija,
               podno grijanje, Vaillant dizalice topline i prvoklasna keramika.
-              Useljivo odmah.
+              U izgradnji.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
               <p className="font-sans text-xs text-cream/45">
-                15 stanova dostupno · Useljivo odmah
+                15 stanova dostupno · U izgradnji
               </p>
             </div>
           </div>

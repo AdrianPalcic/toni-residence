@@ -128,7 +128,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
               label: "Slobodnih stanova",
               value: availableCount > 0 ? `${availableCount} / ${availability.length}` : "Na upitu",
             },
-            { label: "Useljivo", value: "Odmah" },
+            { label: "Status", value: "U izgradnji" },
           ].map(({ label, value }) => (
             <div key={label} className="text-center sm:text-left">
               <p className="font-sans text-xs tracking-widest2 uppercase text-cream/40">
@@ -336,7 +336,7 @@ export default function StanPage({ params }: { params: { tip: string } }) {
                   Svibje Residence
                 </p>
                 <p className="font-serif text-2xl sm:text-3xl text-navy-950 mt-2">
-                  Useljivo odmah — stanovi čekaju vas
+                  U izgradnji — rezervirajte svoj stan na vrijeme
                 </p>
               </div>
               <a href="#kontakt" className="btn-outline-dark whitespace-nowrap shrink-0">
@@ -506,9 +506,9 @@ export default function StanPage({ params }: { params: { tip: string } }) {
               </div>
               <div>
                 <dt className="font-sans text-xs tracking-widest2 uppercase text-navy-800/45">
-                  Useljivo
+                  Status
                 </dt>
-                <dd className="font-sans text-navy-950 mt-1">Odmah</dd>
+                <dd className="font-sans text-navy-950 mt-1">U izgradnji</dd>
               </div>
             </dl>
 

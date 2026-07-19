@@ -4,11 +4,30 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 export default function ContactSection() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("sent");
+    setStatus("sending");
+
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "6b50da96-2e0d-4d18-9f4c-1e22cc885cf3");
+    formData.append("subject", "Novi upit sa Svibje Residence weba");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.success) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -99,6 +118,7 @@ export default function ContactSection() {
                     </label>
                     <input
                       required
+                      name="name"
                       type="text"
                       className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors"
                     />
@@ -108,6 +128,7 @@ export default function ContactSection() {
                       Telefon
                     </label>
                     <input
+                      name="phone"
                       type="tel"
                       className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors"
                     />
@@ -119,6 +140,7 @@ export default function ContactSection() {
                   </label>
                   <input
                     required
+                    name="email"
                     type="email"
                     className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors"
                   />
@@ -127,7 +149,11 @@ export default function ContactSection() {
                   <label className="font-sans text-xs tracking-wide uppercase text-navy-800/60">
                     Za koji tip stana ste zainteresirani?
                   </label>
-                  <select className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors">
+                  <select
+                    name="tip_stana"
+                    defaultValue="Nisam siguran/na"
+                    className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors"
+                  >
                     <option>Nisam siguran/na</option>
                     <option>Tip A</option>
                     <option>Tip B</option>
@@ -141,12 +167,22 @@ export default function ContactSection() {
                     Poruka
                   </label>
                   <textarea
+                    name="message"
                     rows={3}
                     className="w-full mt-2 bg-transparent border-b border-navy-950/25 py-2 font-sans text-navy-950 focus:outline-none focus:border-gold-dark transition-colors resize-none"
                   />
                 </div>
-                <button type="submit" className="btn-primary mt-3 self-start">
-                  Pošaljite upit
+                {status === "error" && (
+                  <p className="font-sans text-sm text-red-600">
+                    Došlo je do greške. Molimo pokušajte ponovno ili nas kontaktirajte telefonski.
+                  </p>
+                )}
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="btn-primary mt-3 self-start disabled:opacity-60"
+                >
+                  {status === "sending" ? "Slanje..." : "Pošaljite upit"}
                 </button>
               </form>
             )}

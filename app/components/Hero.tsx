@@ -19,7 +19,7 @@ export default function Hero() {
       <div className="relative z-10 flex min-h-[100svh] flex-col justify-end">
         <div className="container-px max-w-8xl mx-auto w-full pb-16 lg:pb-20">
           <p className="fade-in-up section-heading-eyebrow text-gold-light">
-            Novogradnja &middot; Useljivo odmah
+            Novogradnja &middot; U izgradnji
           </p>
           <h1
             className="fade-in-up font-serif text-4xl sm:text-6xl lg:text-[5.5rem] leading-[1.05] text-cream mt-4 max-w-3xl"
