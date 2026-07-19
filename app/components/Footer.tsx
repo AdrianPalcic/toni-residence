@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getAvailableCount, getFloors, getTotalCount } from "@/app/data/building";
 
 const navLinks = [
   { href: "#o-projektu", label: "O projektu" },
@@ -10,7 +11,11 @@ const navLinks = [
   { href: "#kontakt", label: "Kontakt" },
 ];
 
-export default function Footer() {
+export default async function Footer() {
+  const floors = await getFloors();
+  const availableCount = getAvailableCount(floors);
+  const totalCount = getTotalCount(floors);
+
   return (
     <footer className="bg-navy-950">
       <div className="h-px bg-gold-gradient opacity-40" />
@@ -42,7 +47,7 @@ export default function Footer() {
             <div className="mt-6 flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 shrink-0" />
               <p className="font-sans text-xs text-cream/45">
-                15 stanova dostupno · U izgradnji
+                {availableCount} stanova dostupno · U izgradnji
               </p>
             </div>
           </div>
@@ -123,7 +128,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Svibje Residence · AC Mišković d.o.o. Sva prava pridržana.
           </p>
           <p className="font-sans text-xs text-cream/25">
-            Novogradnja · Prizemlje + 3 kata · 17 stanova
+            Novogradnja · Prizemlje + 3 kata{totalCount > 0 ? ` · ${totalCount} stanova` : ""}
           </p>
         </div>
       </div>

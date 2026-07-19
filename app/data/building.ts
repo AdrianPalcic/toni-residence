@@ -1,3 +1,5 @@
+import { getStanovi, getStanoviByTip, mapDostupnost } from "@/sanity/lib/queries";
+
 export type UnitStatus = "available" | "sold" | "reserved";
 
 export interface RoomSpec {
@@ -25,17 +27,21 @@ export interface ApartmentType {
 export interface FloorUnit {
   typeId: string;
   status: UnitStatus;
+  label?: string;
 }
 
-export interface Floor {
+export interface FloorMeta {
   id: string;
   level: number;
   name: string;
   shortName: string;
   description: string;
   planImage: string;
-  units: FloorUnit[];
   extra?: string;
+}
+
+export interface Floor extends FloorMeta {
+  units: FloorUnit[];
 }
 
 export const buildingFeatures: string[] = [
@@ -174,7 +180,10 @@ export const apartmentTypes: ApartmentType[] = [
   },
 ];
 
-export const floors: Floor[] = [
+// Struktura katova (opis, tlocrt kata, dodatni sadržaj) ostaje definirana u kodu —
+// mijenja se rijetko. Koji je stan (tip + dostupnost) stvarno na kojem katu dohvaća
+// se dinamički iz Sanityja preko getFloors().
+export const floorsMeta: FloorMeta[] = [
   {
     id: "prizemlje",
     level: 0,
@@ -183,10 +192,6 @@ export const floors: Floor[] = [
     description:
       "U prizemlju zgrade nalaze se dva stana te 17 spremišta namijenjenih stanarima svih katova.",
     planImage: "/images/tlocrt-1.jpeg",
-    units: [
-      { typeId: "A", status: "sold" },
-      { typeId: "B", status: "sold" },
-    ],
     extra: "17 spremišta",
   },
   {
@@ -196,13 +201,6 @@ export const floors: Floor[] = [
     shortName: "1. kat",
     description: "Prvi kat donosi svih pet tipova stanova u zrcaljenom rasporedu oko središnjeg stubišta.",
     planImage: "/images/tipovi-stanova.jpeg",
-    units: [
-      { typeId: "A", status: "sold" },
-      { typeId: "B", status: "available" },
-      { typeId: "C", status: "available" },
-      { typeId: "D", status: "sold" },
-      { typeId: "E", status: "available" },
-    ],
   },
   {
     id: "kat-2",
@@ -211,13 +209,6 @@ export const floors: Floor[] = [
     shortName: "2. kat",
     description: "Drugi kat ponavlja identičan raspored stanova kao i prvi kat.",
     planImage: "/images/tipovi-stanova.jpeg",
-    units: [
-      { typeId: "A", status: "sold" },
-      { typeId: "B", status: "available" },
-      { typeId: "C", status: "available" },
-      { typeId: "D", status: "sold" },
-      { typeId: "E", status: "available" },
-    ],
   },
   {
     id: "kat-3",
@@ -226,25 +217,58 @@ export const floors: Floor[] = [
     shortName: "3. kat",
     description: "Treći, najviši kat zgrade — identičan raspored uz dodatnu visinu i pogled.",
     planImage: "/images/tipovi-stanova.jpeg",
-    units: [
-      { typeId: "A", status: "available" },
-      { typeId: "B", status: "available" },
-      { typeId: "C", status: "available" },
-      { typeId: "D", status: "available" },
-      { typeId: "E", status: "available" },
-    ],
   },
 ];
 
-export function getAvailableCount(): number {
+const typeOrder = apartmentTypes.map((t) => t.id);
+
+/** Dohvaća stanove iz Sanityja i spaja ih s katovima. Poziva se iz server komponenti. */
+export async function getFloors(): Promise<Floor[]> {
+  const stanovi = await getStanovi();
+  return floorsMeta.map((meta) => ({
+    ...meta,
+    units: stanovi
+      .filter((s) => s.kat === meta.id)
+      .sort((a, b) => typeOrder.indexOf(a.tip) - typeOrder.indexOf(b.tip))
+      .map((s) => ({
+        typeId: s.tip,
+        status: mapDostupnost(s.dostupnost),
+        label: s.oznaka,
+      })),
+  }));
+}
+
+/** Dohvaća samo stanove danog tipa (Sanity upit filtriran po tipu), po katovima. */
+export async function getAvailabilityForType(
+  typeId: string
+): Promise<{ floor: FloorMeta; unit: FloorUnit }[]> {
+  const stanovi = await getStanoviByTip(typeId);
+  return floorsMeta.flatMap((floor) => {
+    const stan = stanovi.find((s) => s.kat === floor.id);
+    if (!stan) return [];
+    return [
+      {
+        floor,
+        unit: { typeId, status: mapDostupnost(stan.dostupnost), label: stan.oznaka },
+      },
+    ];
+  });
+}
+
+export function getAvailableCount(floors: Floor[]): number {
   return floors.flatMap((f) => f.units).filter((u) => u.status === "available").length;
 }
 
-export function getBuildingFacts() {
-  const available = getAvailableCount();
+export function getTotalCount(floors: Floor[]): number {
+  return floors.flatMap((f) => f.units).length;
+}
+
+export function getBuildingFacts(floors: Floor[]) {
+  const available = getAvailableCount(floors);
+  const total = getTotalCount(floors);
   return [
     { label: "Etaže", value: "Prizemlje + 3 kata" },
-    { label: "Slobodnih stanova", value: `${available} / 17` },
+    { label: "Slobodnih stanova", value: total > 0 ? `${available} / ${total}` : "Na upitu" },
     { label: "Spremišta", value: "17" },
     { label: "Tipova stanova", value: "5 (A–E)" },
     { label: "Dostupnost", value: "U izgradnji" },

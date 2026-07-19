@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { apartmentTypes, floors } from "@/app/data/building";
+import { apartmentTypes, getFloors, type Floor } from "@/app/data/building";
 import Reveal from "./Reveal";
 
-function availabilityForType(typeId: string) {
+function availabilityForType(floors: Floor[], typeId: string) {
   let available = 0;
   let total = 0;
   for (const floor of floors) {
@@ -16,7 +16,9 @@ function availabilityForType(typeId: string) {
   return { available, total };
 }
 
-export default function ApartmentTypes() {
+export default async function ApartmentTypes() {
+  const floors = await getFloors();
+
   return (
     <section id="stanovi" className="relative bg-cream py-24 lg:py-32">
       <div className="container-px max-w-8xl mx-auto">
@@ -34,7 +36,7 @@ export default function ApartmentTypes() {
 
         <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-5">
           {apartmentTypes.map((apt, i) => {
-            const { available } = availabilityForType(apt.id);
+            const { available } = availabilityForType(floors, apt.id);
             const soldOut = available === 0;
 
             return (

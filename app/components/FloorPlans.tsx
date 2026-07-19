@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { floors, apartmentTypes } from "@/app/data/building";
-import type { UnitStatus } from "@/app/data/building";
+import { apartmentTypes } from "@/app/data/building";
+import type { UnitStatus, Floor } from "@/app/data/building";
 import Reveal from "./Reveal";
 
 const statusLabel: Record<UnitStatus, string> = {
@@ -19,7 +19,7 @@ const statusClasses: Record<UnitStatus, string> = {
   sold: "bg-navy-950/10 text-navy-950/50 border-navy-950/15",
 };
 
-export default function FloorPlans() {
+export default function FloorPlans({ floors }: { floors: Floor[] }) {
   const [floorId, setFloorId] = useState(floors[1].id);
   const [zoom, setZoom] = useState<string | null>(null);
   const floor = floors.find((f) => f.id === floorId)!;

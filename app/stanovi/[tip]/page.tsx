@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { apartmentTypes, floors, buildingFeatures } from "@/app/data/building";
+import { apartmentTypes, getAvailabilityForType, buildingFeatures } from "@/app/data/building";
 import Header from "@/app/components/Header";
 import StanFooter from "@/app/components/StanFooter";
 import StanContact from "@/app/components/StanContact";
@@ -46,19 +46,14 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-export default function StanPage({ params }: { params: { tip: string } }) {
+export default async function StanPage({ params }: { params: { tip: string } }) {
   const apt = apartmentTypes.find((t) => t.id === params.tip.toUpperCase());
   if (!apt) notFound();
 
-  const availability = floors
-    .map((floor) => ({
-      floor,
-      unit: floor.units.find((u) => u.typeId === apt.id),
-    }))
-    .filter((x) => x.unit !== undefined);
+  const availability = await getAvailabilityForType(apt.id);
 
   const availableCount = availability.filter(
-    (x) => x.unit?.status === "available"
+    (x) => x.unit.status === "available"
   ).length;
 
   const otherTypes = apartmentTypes.filter((t) => t.id !== apt.id);
@@ -365,7 +360,6 @@ export default function StanPage({ params }: { params: { tip: string } }) {
           <Reveal delay={80}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {availability.map(({ floor, unit }) => {
-                if (!unit) return null;
                 const isAvailable = unit.status === "available";
                 return (
                   <div

@@ -1,7 +1,11 @@
 import Image from "next/image";
-import { getBuildingFacts } from "@/app/data/building";
+import { getBuildingFacts, getFloors, getTotalCount } from "@/app/data/building";
 
-export default function Hero() {
+export default async function Hero() {
+  const floors = await getFloors();
+  const facts = getBuildingFacts(floors);
+  const totalCount = getTotalCount(floors);
+
   return (
     <>
     <section className="relative min-h-[100svh] w-full overflow-hidden bg-navy-950">
@@ -39,7 +43,7 @@ export default function Hero() {
           >
             Suvremena rezidencijalna zgrada s pažljivo osmišljenim stanovima,
             plemenitim materijalima i mirnim susjedstvom — prizemlje i tri
-            kata, ukupno 17 stanova.
+            kata{totalCount > 0 ? `, ukupno ${totalCount} stanova` : ""}.
           </p>
 
           <div
@@ -58,7 +62,7 @@ export default function Hero() {
             className="fade-in-up hidden sm:grid sm:grid-cols-5 gap-x-8 gap-y-6 mt-14 pt-8 border-t border-cream/15"
             style={{ animationDelay: "480ms" }}
           >
-            {getBuildingFacts().map((fact) => (
+            {facts.map((fact) => (
               <div key={fact.label}>
                 <p className="font-serif text-xl sm:text-2xl text-gold-light">{fact.value}</p>
                 <p className="font-sans text-[11px] sm:text-xs tracking-wider uppercase text-cream/55 mt-1">
@@ -80,7 +84,7 @@ export default function Hero() {
 
     <section className="sm:hidden bg-navy-950 py-10">
       <div className="container-px grid grid-cols-2 gap-x-5 gap-y-6">
-        {getBuildingFacts().map((fact) => (
+        {facts.map((fact) => (
           <div key={fact.label}>
             <p className="font-serif text-xl text-gold-light">{fact.value}</p>
             <p className="font-sans text-[11px] tracking-wider uppercase text-cream/55 mt-1">

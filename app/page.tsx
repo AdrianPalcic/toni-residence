@@ -7,8 +7,11 @@ import ApartmentTypes from "./components/ApartmentTypes";
 import FloorPlans from "./components/FloorPlans";
 import ContactSection from "./components/ContactSection";
 import Footer from "./components/Footer";
+import { getFloors } from "./data/building";
 
-export default function Home() {
+export default async function Home() {
+  const floors = await getFloors();
+
   return (
     <main>
       <Header />
@@ -17,7 +20,7 @@ export default function Home() {
       <Gallery />
       <VirtualTour />
       <ApartmentTypes />
-      <FloorPlans />
+      <FloorPlans floors={floors} />
       <ContactSection />
       <Footer />
     </main>
