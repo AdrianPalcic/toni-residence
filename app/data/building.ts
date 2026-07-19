@@ -68,7 +68,7 @@ export const apartmentTypes: ApartmentType[] = [
       "Prostrani trosobni stan s dvije spavaće sobe, izdvojenim dnevnim boravkom s blagovaonicom i velikom terasom okrenutom prema jugu.",
     floorplans: ["/images/tlocrt-3.jpeg"],
     highlights: ["2 spavaće sobe", "Velika terasa prema jugu", "Odvojena kuhinja", "Prostrani dnevni boravak"],
-    heroImage: "/images/vanjski-2.jpeg",
+    heroImage: "/images/tip-a-hero.jpeg",
     galleryImages: ["/images/vanjski-1.jpeg", "/images/vanjski-3.jpeg", "/images/stubiste-i-hodnik-1.jpeg"],
     specsImage: "/images/specs-tip-a.jpeg",
     roomSpecs: [
@@ -91,7 +91,7 @@ export const apartmentTypes: ApartmentType[] = [
       "Zrcalna verzija Tipa A na suprotnoj strani zgrade — dvije spavaće sobe, garderoba i prostran dnevni boravak s pristupom balkonu.",
     floorplans: ["/images/tlocrt-4.jpeg"],
     highlights: ["Garderoba", "Balkon", "Puno prirodnog svjetla", "2 spavaće sobe"],
-    heroImage: "/images/vanjski-4.jpeg",
+    heroImage: "/images/tip-b-hero.jpeg",
     galleryImages: ["/images/vanjski-3.jpeg", "/images/vanjski-5.jpeg", "/images/stubiste-i-hodnik-2.jpeg"],
     specsImage: "/images/specs-tip-b.jpeg",
     roomSpecs: [
@@ -114,7 +114,7 @@ export const apartmentTypes: ApartmentType[] = [
       "Funkcionalan dvosobni stan s odvojenom spavaćom sobom, radnim kutom i dnevnim boravkom otvorenim prema kuhinji.",
     floorplans: ["/images/tlocrt-5.jpeg"],
     highlights: ["Radni kutak", "Otvoreni dnevni boravak", "Balkon", "Funkcionalan raspored"],
-    heroImage: "/images/vanjski-5.jpeg",
+    heroImage: "/images/tip-c-hero.jpeg",
     galleryImages: ["/images/vanjski-6.jpeg", "/images/vanjski-7.jpeg", "/images/stubiste-i-hodnik-3.jpeg"],
     specsImage: "/images/specs-tip-c.jpeg",
     roomSpecs: [
@@ -137,7 +137,7 @@ export const apartmentTypes: ApartmentType[] = [
       "Kompaktan i praktičan jednosobni stan, idealan za investiciju ili mlade parove — spavaća soba, dnevni boravak i vlastita terasa.",
     floorplans: ["/images/tlocrt-6.jpeg"],
     highlights: ["Kompaktan raspored", "Vlastita terasa", "Idealno za najam", "Niža cijena ulaza"],
-    heroImage: "/images/vanjski-7.jpeg",
+    heroImage: "/images/tip-d-hero.jpeg",
     galleryImages: ["/images/vanjski-8.jpeg", "/images/vanjski-9.jpeg", "/images/stubiste-i-hodnik-4.jpeg"],
     specsImage: "/images/specs-tip-d.jpeg",
     roomSpecs: [
@@ -160,7 +160,7 @@ export const apartmentTypes: ApartmentType[] = [
       "Najveći tip stana na katu — tri sobe, prostrani dnevni boravak s blagovaonicom i dvostruko orijentiran pogled.",
     floorplans: ["/images/tlocrt-7.jpeg", "/images/tlocrt-8.jpeg"],
     highlights: ["3 sobe", "Dvostruka orijentacija", "Najveća kvadratura", "Prostrana blagovaonica"],
-    heroImage: "/images/vanjski-9.jpeg",
+    heroImage: "/images/tip-e-hero.jpeg",
     galleryImages: ["/images/vanjski-1.jpeg", "/images/vanjski-8.jpeg", "/images/stubiste-i-hodnik-5.jpeg"],
     specsImage: "/images/specs-tip-e.jpeg",
     roomSpecs: [
