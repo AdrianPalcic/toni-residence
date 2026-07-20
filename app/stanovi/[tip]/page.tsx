@@ -20,9 +20,38 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const apt = apartmentTypes.find((t) => t.id === params.tip.toUpperCase());
   if (!apt) return {};
+
+  const title = `${apt.name} – ${apt.rooms} ${apt.areaApprox} u Rugvici`;
+  const description = `${apt.description} Dio je projekta Svibje Residence u Rugvici.`;
+
   return {
-    title: `${apt.name} – ${apt.rooms} ${apt.areaApprox} | Svibje Residence`,
-    description: apt.description,
+    title,
+    description,
+    keywords: [
+      `${apt.name} Rugvica`,
+      "stanovi Rugvica",
+      "novogradnja Rugvica",
+      "stanovi za prodaju Rugvica",
+      "nekretnine Rugvica",
+      `${apt.rooms} stan Rugvica`,
+    ],
+    alternates: {
+      canonical: `/stanovi/${apt.id.toLowerCase()}`,
+    },
+    openGraph: {
+      title: `${title} | Svibje Residence`,
+      description,
+      url: `/stanovi/${apt.id.toLowerCase()}`,
+      images: [{ url: apt.heroImage, width: 1200, height: 800, alt: `${apt.name} — Svibje Residence` }],
+      locale: "hr_HR",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${title} | Svibje Residence`,
+      description,
+      images: [apt.heroImage],
+    },
   };
 }
 
