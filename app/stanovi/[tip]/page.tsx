@@ -7,6 +7,7 @@ import Header from "@/app/components/Header";
 import StanFooter from "@/app/components/StanFooter";
 import StanContact from "@/app/components/StanContact";
 import StanFloorPlan from "@/app/components/StanFloorPlan";
+import StanGallery from "@/app/components/StanGallery";
 import Reveal from "@/app/components/Reveal";
 
 export function generateStaticParams() {
@@ -229,25 +230,8 @@ export default async function StanPage({ params }: { params: { tip: string } }) 
         </div>
       </section>
 
-      {/* ── Gallery strip ── */}
-      <section className="bg-stone-100 py-6">
-        <div className="container-px max-w-8xl mx-auto grid grid-cols-3 gap-3 sm:gap-4">
-          {apt.galleryImages.map((src, i) => (
-            <div
-              key={src}
-              className="relative aspect-[4/3] overflow-hidden rounded-sm"
-            >
-              <Image
-                src={src}
-                alt={`Svibje Residence – fotografija ${i + 1}`}
-                fill
-                sizes="(min-width: 1024px) 30vw, 33vw"
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* ── Gallery ── */}
+      <StanGallery images={apt.images} aptName={apt.name} />
 
       {/* ── Specifikacije ── */}
       <section className="bg-cream py-24 lg:py-32">
