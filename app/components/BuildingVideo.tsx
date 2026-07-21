@@ -8,18 +8,25 @@ export default function BuildingVideo() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (!playing) return;
     const video = videoRef.current;
     if (!video) return;
 
     function onLoadedMetadata() {
       video!.currentTime = 5;
-      video!.play();
     }
 
     video.addEventListener("loadedmetadata", onLoadedMetadata);
     return () => video.removeEventListener("loadedmetadata", onLoadedMetadata);
-  }, [playing]);
+  }, []);
+
+  function handlePlayClick() {
+    setPlaying(true);
+    // Must call play() synchronously within the click handler — the video is
+    // already mounted (just hidden) so the ref exists here. Calling it later,
+    // e.g. from the async 'loadedmetadata' handler, loses the user-gesture
+    // association and browsers silently block autoplay-with-sound.
+    videoRef.current?.play().catch(() => {});
+  }
 
   return (
     <section className="relative bg-navy-950 py-24 lg:py-32">
@@ -37,24 +44,26 @@ export default function BuildingVideo() {
             alt="Svibje Residence — video zgrade"
             fill
             sizes="(min-width: 640px) 384px, 320px"
-            className="object-cover"
+            className={`object-cover transition-opacity duration-300 ${playing ? "opacity-0" : "opacity-100"}`}
           />
 
-          {playing ? (
-            <video
-              ref={videoRef}
-              src="/videos/residence-video.mp4"
-              preload="none"
-              playsInline
-              controls
-              className="absolute inset-0 h-full w-full object-cover bg-navy-950"
-            />
-          ) : (
+          <video
+            ref={videoRef}
+            src="/videos/residence-video.mp4"
+            preload="none"
+            playsInline
+            controls
+            className={`absolute inset-0 h-full w-full object-cover bg-navy-950 ${
+              playing ? "" : "invisible pointer-events-none"
+            }`}
+          />
+
+          {!playing && (
             <>
               <div className="absolute inset-0 bg-navy-950/45" />
               <button
                 type="button"
-                onClick={() => setPlaying(true)}
+                onClick={handlePlayClick}
                 aria-label="Pokreni video zgrade"
                 className="group absolute inset-0 flex items-center justify-center"
               >
