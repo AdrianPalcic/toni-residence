@@ -65,7 +65,7 @@ export default function About() {
         </Reveal>
 
         <Reveal delay={150}>
-          <div className="relative grid grid-cols-2 gap-4">
+          <div className="relative grid grid-cols-2 gap-4 pb-16 lg:pb-0">
             <div className="relative aspect-[3/4] rounded-sm overflow-hidden translate-y-8">
               <Image
                 src="/images/vanjski-2.jpeg"
